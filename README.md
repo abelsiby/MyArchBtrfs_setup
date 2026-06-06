@@ -319,13 +319,13 @@ systemctl restart --user pipewire.service pipewire-pulse.service
 
 ## How to See and Modify Snapshots
 
-# List snapshots 
+### List snapshots 
 
 ```bash
 sudo snapper -c root list
 ```
 
-# Delete Snapshots
+### Delete Snapshots
 
 ```bash
 
