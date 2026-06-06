@@ -1,4 +1,4 @@
-# Arch Linux (Gnome) Installation with BTRFS on Gnome & Post-Install Guide
+# Arch Linux (Gnome) Installation with BTRFS & Post-Install Guide
 
 A highly optimized, clean, and modern Arch Linux installation workflow featuring **Btrfs subvolumes**, **EFISTUB booting**, **GNOME Desktop Environment**, **Snapper snapshot tracking**, a **zram memory-compressed swap configuration**, and an **automated firmware/kernel backup system**.
 
@@ -181,7 +181,7 @@ Install sudo tools and build out your primary work identity with standard group 
 pacman -S sudo
 useradd -m yourusername
 passwd yourusername
-usermod -aG wheel,audio,video,storage Abel
+usermod -aG wheel,audio,video,storage yourusername
 
 # Configure elevation rights safely
 EDITOR=nvim visudo
@@ -206,7 +206,7 @@ Since Snapper requires direct authority over the execution of snapshots, we temp
 ```bash
 umount /.snapshots
 rm -rf /.snapshots
-snapper -c root create-config /
+snapper --no-dbus -c root create-config /
 btrfs subvolume delete /.snapshots
 mkdir /.snapshots
 mount -a
@@ -313,6 +313,27 @@ nvim ~/.config/discord/settings.json
 # 4. Audio checking and pipewire restarts (if configs are modified)
 systemctl restart --user pipewire.service pipewire-pulse.service
 # Check runtime sample rates using: pw-top
+```
+
+---
+
+## How to See and Modify Snapshots
+
+# List snapshots 
+
+```bash
+sudo snapper -c root list
+```
+
+# Delete Snapshots
+
+```bash
+
+# To delete snapshot numbered N
+sudo snapper -c root delete N
+
+# To delete snapshots numbered from M to N
+sudo snapper -c root delete M-N
 ```
 
 ---
