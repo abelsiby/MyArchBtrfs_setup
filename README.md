@@ -238,7 +238,7 @@ compression-algorithm = zstd
 
 Create `/etc/sysctl.d/99-zram.conf` file (or edit it) to tell the kernel to proactively use your fast zram space rather than letting physical RAM fill completely up
 ```bash
-nvim /etc/systemd/zram-generator.conf
+nvim /etc/sysctl.d/99-zram.conf
 ```
 Add the below config
 ```ini
