@@ -198,7 +198,9 @@ pacman -Syu
 ### 3. Bulk Software Stack Sync
 Pull down your complete package manifest containing drivers, core CLI dependencies, your GNOME ecosystem, and graphical tool preferences:
 ```bash
-pacman -S --needed mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon libva-utils git wget xdg-utils ripgrep xclip go npm lua51 luarocks dosfstools ntfsprogs fastfetch noto-fonts noto-fonts-cjk nerd-fonts tree-sitter-cli speech-dispatcher gnome extension-manager gnome-tweaks fragments amberol networkmanager bluez bluez-utils firefox kitty resources steam discord electron
+pacman -S mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon libva-utils git wget xdg-utils ripgrep xclip go npm lua51 luarocks dosfstools ntfsprogs fastfetch noto-fonts noto-fonts-cjk nerd-fonts tree-sitter-cli speech-dispatcher
+pacman -S gnome extension-manager gnome-tweaks fragments amberol networkmanager bluez bluez-utils firefox kitty resources
+pacman -S steam discord electron texlive-meta
 ```
 
 ### 4. Configure Snapper Structure
