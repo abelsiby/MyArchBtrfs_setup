@@ -201,7 +201,7 @@ Pull down your complete package manifest containing drivers, core CLI dependenci
 pacman -S mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon libva-utils
 pacman -S git wget xdg-utils ripgrep xclip go npm lua51 luarocks
 pacman -S dosfstools ntfsprogs smartmontools fastfetch tree-sitter-cli
-pacman -S noto-fonts noto-fonts-cjk nerd-fonts
+pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji nerd-fonts
 pacman -S networkmanager bluez bluez-utils
 pacman -S gnome extension-manager gnome-tweaks fragments amberol firefox kitty resources
 pacman -S speech-dispatcher steam discord electron texlive-meta
