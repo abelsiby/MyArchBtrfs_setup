@@ -141,7 +141,6 @@ Write the tracking script contents completely:
 BACKUP_DIR="/etc/efi-backups"
 cp /boot/vmlinuz-linux "$BACKUP_DIR/vmlinuz-linux.bak"
 cp /boot/initramfs-linux.img "$BACKUP_DIR/initramfs-linux.bak.img"
-cp /boot/initramfs-linux-fallback.img "$BACKUP_DIR/initramfs-linux-fallback.bak.img"
 cp /boot/amd-ucode.img "$BACKUP_DIR/amd-ucode.bak.img"
 efibootmgr -v > "$BACKUP_DIR/efibootmgr-entries.txt"
 ```
