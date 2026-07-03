@@ -197,7 +197,7 @@ pacman -Syu
 ### 3. Bulk Software Stack Sync
 Pull down your complete package manifest containing drivers, core CLI dependencies, your GNOME ecosystem, and graphical tool preferences:
 ```bash
-pacman -S mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon libva-utils
+pacman -S mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon
 pacman -S git wget xdg-utils ripgrep xclip go npm lua51 luarocks
 pacman -S dosfstools ntfsprogs smartmontools fastfetch tree-sitter-cli
 pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji nerd-fonts
