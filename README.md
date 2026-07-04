@@ -318,6 +318,10 @@ nvim ~/.config/discord/settings.json
 # 4. Audio checking and pipewire restarts (if configs are modified)
 systemctl restart --user pipewire.service pipewire-pulse.service
 # Check runtime sample rates using: pw-top
+
+# 5. If you cannot change gnome user icon
+
+busctl call org.freedesktop.Accounts /org/freedesktop/Accounts/User${UID} org.freedesktop.Accounts.User SetIconFile s /path/to/you/icon.png
 ```
 
 ---
