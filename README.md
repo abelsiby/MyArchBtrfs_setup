@@ -202,8 +202,8 @@ pacman -S git wget xdg-utils ripgrep xclip go npm lua51 luarocks
 pacman -S dosfstools ntfsprogs smartmontools fastfetch tree-sitter-cli
 pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji nerd-fonts
 pacman -S networkmanager bluez bluez-utils reflector
-pacman -S gnome extension-manager gnome-tweaks fragments amberol firefox kitty resources
-pacman -S speech-dispatcher steam discord electron texlive-meta
+pacman -S gnome extension-manager gnome-tweaks fragments amberol firefox kitty resources geary
+pacman -S speech-dispatcher steam discord texlive-meta papirus-icon-theme
 ```
 
 ### 4. Configure Snapper Structure
@@ -275,7 +275,7 @@ cd .. && rm -rf yay
 ### 2. AUR Integration & Lua Modules
 Utilize `yay` to install specialized desktop themes or terminal extensions, and deploy your critical development environment plugins via luarocks:
 ```bash
-yay -S gdm-settings nautilus-open-any-terminal proton-mail-bin
+yay -S gdm-settings nautilus-open-any-terminal
 
 # Return directly to administrative root space to complete global installations
 exit
