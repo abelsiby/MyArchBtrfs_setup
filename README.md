@@ -343,6 +343,11 @@ sudo snapper -c root delete N
 
 # To delete snapshots numbered from M to N
 sudo snapper -c root delete M-N
+
+# To completely remobe all snapshots are reset numbering
+sudo snapper -c root delete $(sudo snapper -c root list --columns number | tail +4)
+sudo snapper -c root set-config UNIQUE_NUMBERS=no
+sudo rm -rf /.snapshots/[0-9]*
 ```
 
 ---
