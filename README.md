@@ -258,7 +258,7 @@ NUMBER_LIMIT_IMPORTANT="3-5"
 TIMELINE_CREATE="no"
 ```
 
-### 5. Configure Zram RAM-Compressed Swap Space
+### 7. Configure Zram RAM-Compressed Swap Space
 Configure `zram-generator` to handle system memory swap optimizations natively inside RAM without breaking Btrfs Copy-on-Write dynamics:
 ```bash
 nvim /etc/systemd/zram-generator.conf
@@ -288,7 +288,7 @@ vm.watermark_boost_factor = 0
 ## Part 5: AUR Packaging & Final System Polishing
 
 
-### 3. System Daemons Initialization
+### 1. System Daemons Initialization
 Activate standard daemons to run smoothly on bootup:
 ```bash
 systemctl enable gdm.service
@@ -296,7 +296,7 @@ systemctl enable NetworkManager.service
 systemctl enable bluetooth.service
 ```
 
-### 4. User Profile Customizations & Environment Optimization
+### 2. User Profile Customizations & Environment Optimization
 Drop out of the chroot jail back down to the target environment live instance:
 ```bash
 exit
