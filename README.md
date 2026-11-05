@@ -202,11 +202,39 @@ pacman -S git wget xdg-utils ripgrep xclip go npm lua51 luarocks
 pacman -S dosfstools ntfsprogs smartmontools fastfetch tree-sitter-cli
 pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji nerd-fonts
 pacman -S networkmanager bluez bluez-utils reflector
-pacman -S gnome extension-manager gnome-tweaks fragments amberol firefox kitty resources geary
-pacman -S speech-dispatcher steam discord texlive-meta papirus-icon-theme
+pacman -S gnome
+pacman -S extension-manager gnome-tweaks fragments amberol resources geary gnome-themes-extra
+pacman -S speech-dispatcher steam discord firefox kitty solaar
+pacman -S texlive-meta
+
+luarocks --lua-version=5.1 install dkjson
+luarocks --lua-version=5.1 install magick
 ```
 
-### 4. Configure Snapper Structure
+### 4. Profile Shift & AUR Tool Setup
+Drop out of root permissions down to your user account profile context to securely deal with the AUR helper generation:
+```bash
+su -l yourusername
+```
+Compile and configure `yay`:
+```bash
+cd ~
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+cd .. && rm -rf yay
+```
+
+### 5. AUR Integration
+Utilize `yay` to install specialized desktop themes or terminal extensions, and deploy your critical development environment plugins via luarocks:
+```bash
+yay -S gdm-settings nautilus-open-any-terminal
+
+# Return directly to administrative root space to complete global installations
+exit
+```
+
+### 6. Configure Snapper Structure
 Since Snapper requires direct authority over the execution of snapshots, we temporarily separate the nested subvolume, let the configuration engine mount its root path, and hook up permissions:
 ```bash
 umount /.snapshots
@@ -223,6 +251,7 @@ nvim /etc/snapper/configs/root
 ```
 Ensure these variable structures align within the file:
 ```text
+UNIQUE_NUMBERS="no"
 ALLOW_GROUPS="wheel"
 NUMBER_LIMIT="5-10"
 NUMBER_LIMIT_IMPORTANT="3-5"
@@ -258,31 +287,6 @@ vm.watermark_boost_factor = 0
 
 ## Part 5: AUR Packaging & Final System Polishing
 
-### 1. Profile Shift & AUR Tool Setup
-Drop out of root permissions down to your user account profile context to securely deal with the AUR helper generation:
-```bash
-su -l yourusername
-```
-Compile and configure `yay`:
-```bash
-cd ~
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-cd .. && rm -rf yay
-```
-
-### 2. AUR Integration & Lua Modules
-Utilize `yay` to install specialized desktop themes or terminal extensions, and deploy your critical development environment plugins via luarocks:
-```bash
-yay -S gdm-settings nautilus-open-any-terminal
-
-# Return directly to administrative root space to complete global installations
-exit
-
-luarocks --lua-version=5.1 install dkjson
-luarocks --lua-version=5.1 install magick
-```
 
 ### 3. System Daemons Initialization
 Activate standard daemons to run smoothly on bootup:
@@ -318,10 +322,6 @@ nvim ~/.config/discord/settings.json
 # 4. Audio checking and pipewire restarts (if configs are modified)
 systemctl restart --user pipewire.service pipewire-pulse.service
 # Check runtime sample rates using: pw-top
-
-# 5. If you cannot change gnome user icon
-
-busctl call org.freedesktop.Accounts /org/freedesktop/Accounts/User${UID} org.freedesktop.Accounts.User SetIconFile s /path/to/you/icon.png
 ```
 
 ---
