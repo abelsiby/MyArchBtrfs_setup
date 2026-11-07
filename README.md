@@ -285,7 +285,7 @@ vm.watermark_boost_factor = 0
 
 ---
 
-## Part 5: AUR Packaging & Final System Polishing
+## Part 5: Final System Polishing
 
 
 ### 1. System Daemons Initialization
