@@ -206,9 +206,6 @@ pacman -S gnome
 pacman -S extension-manager gnome-tweaks fragments amberol resources geary gnome-themes-extra
 pacman -S speech-dispatcher steam discord firefox kitty solaar
 pacman -S texlive-meta
-
-luarocks --lua-version=5.1 install dkjson
-luarocks --lua-version=5.1 install magick
 ```
 
 ### 4. Profile Shift & AUR Tool Setup
@@ -229,9 +226,14 @@ cd .. && rm -rf yay
 Utilize `yay` to install specialized desktop themes or terminal extensions, and deploy your critical development environment plugins via luarocks:
 ```bash
 yay -S gdm-settings nautilus-open-any-terminal
+# gnome-online-accounts-googledrive gvfs-googledrive
 
 # Return directly to administrative root space to complete global installations
 exit
+
+
+luarocks --lua-version=5.1 install dkjson
+luarocks --lua-version=5.1 install magick
 ```
 
 ### 6. Configure Snapper Structure
