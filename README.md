@@ -1,4 +1,4 @@
-# Arch Linux (Gnome) Installation with BTRFS & Post-Install Guide
+# Arch Linux (Gnome) Installation with BTRFS & Post-Install Guide on an AMD system
 
 A highly optimized, clean, and modern Arch Linux installation workflow featuring **Btrfs subvolumes**, **EFISTUB booting**, **GNOME Desktop Environment**, **Snapper snapshot tracking**, a **zram memory-compressed swap configuration**, and an **automated firmware/kernel backup system**.
 
