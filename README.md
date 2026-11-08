@@ -226,7 +226,7 @@ cd .. && rm -rf yay
 Utilize `yay` to install specialized desktop themes or terminal extensions, and deploy your critical development environment plugins via luarocks:
 ```bash
 yay -S gdm-settings nautilus-open-any-terminal
-# gnome-online-accounts-googledrive gvfs-googledrive
+yay -S gnome-online-accounts-googledrive gvfs-googledrive
 
 # Return directly to administrative root space to complete global installations
 exit
