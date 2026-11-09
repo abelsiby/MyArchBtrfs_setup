@@ -324,6 +324,11 @@ nvim ~/.config/discord/settings.json
 # 4. Audio checking and pipewire restarts (if configs are modified)
 systemctl restart --user pipewire.service pipewire-pulse.service
 # Check runtime sample rates using: pw-top
+
+# 5. Autostart steam and solaar on gnome user login silently, edit ~/.config/autostart/solaar.desktop and ~/.config/autostart/steam.desktop
+Exec=solaar --window=hide # for solaar
+Exec=/usr/bin/steam -silent %U # for steam
+
 ```
 
 ---
