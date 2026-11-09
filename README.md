@@ -329,6 +329,10 @@ systemctl restart --user pipewire.service pipewire-pulse.service
 Exec=solaar --window=hide # for solaar
 Exec=/usr/bin/steam -silent %U # for steam
 
+# 6. If you cannot change gnome user icon
+
+busctl call org.freedesktop.Accounts /org/freedesktop/Accounts/User${UID} org.freedesktop.Accounts.User SetIconFile s /path/to/you/icon.png
+
 ```
 
 ---
