@@ -93,8 +93,11 @@ systemctl daemon-reload
 ```
 
 ### 4. Localization & Core Networking
-Configure system locales and specify the permanent machine hostname:
+Configure timezone, system locales and specify the permanent machine hostname:
 ```bash
+ln -sf /usr/share/zoneinfo/Area/Location /etc/localtime # example /usr/share/zoneinfo/Asia/Kolkata
+hwclock --systohc
+
 nvim /etc/locale.gen
 # Uncomment: en_US.UTF-8 UTF-8
 
