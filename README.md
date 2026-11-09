@@ -119,11 +119,12 @@ passwd
 ### 1. Register the EFISTUB Entry
 Extract the exact hardware `PARTUUID` of your Btrfs block device partition (`/dev/nvme0n1p2`):
 ```bash
-blkid -s PARTUUID -o value /dev/nvme0n1p2
+UUID=$(blkid -s PARTUUID -o value /dev/nvme0n1p2)
+echo $UUID
 ```
 Using that output string, issue your custom unified kernel command-line entry straight to your motherboard NVRAM:
 ```bash
-efibootmgr --create --disk /dev/nvme0n1 --part 1 --label "Arch Linux" --loader /vmlinuz-linux --unicode 'root=PARTUUID=output-of-blkid-line rootflags=subvol=@ rw quiet loglevel=3 rd.systemd.show_status=false rd.udev.log_level=3 initrd=\amd-ucode.img initrd=\initramfs-linux.img'
+efibootmgr --create --disk /dev/nvme0n1 --part 1 --label "Arch Linux" --loader /vmlinuz-linux --unicode 'root=PARTUUID='$UUID' rootflags=subvol=@ rw quiet loglevel=3 rd.systemd.show_status=false rd.udev.log_level=3 initrd=\amd-ucode.img initrd=\initramfs-linux.img'
 
 # Verify the slot output looks correct
 efibootmgr
