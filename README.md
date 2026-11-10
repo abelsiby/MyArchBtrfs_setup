@@ -337,6 +337,11 @@ Exec=/usr/bin/steam -silent %U # for steam
 
 busctl call org.freedesktop.Accounts /org/freedesktop/Accounts/User${UID} org.freedesktop.Accounts.User SetIconFile s /path/to/you/icon.png
 
+#7. If location does not work edit geoclue.conf
+
+sudo nvim /etc/geoclue/geoclue.conf
+sudo systemctl restart geoclue.service
+systemctl status geoclue
 ```
 
 ---
