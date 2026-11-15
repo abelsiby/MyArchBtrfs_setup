@@ -208,7 +208,7 @@ pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji nerd-fonts
 pacman -S networkmanager bluez bluez-utils reflector
 pacman -S gnome
 pacman -S extension-manager gnome-tweaks fragments amberol resources geary gnome-themes-extra
-pacman -S speech-dispatcher steam discord firefox kitty solaar
+pacman -S speech-dispatcher steam discord firefox kitty
 pacman -S texlive-meta
 ```
 
